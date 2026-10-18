@@ -6,7 +6,7 @@
 [![GitHub Repo](https://img.shields.io/badge/GitHub-DeutschFlow-18181B?style=for-the-badge&logo=github&logoColor=white)](https://github.com/FarhanHamim/DeutschFlow)
 [![Vercel Deployment](https://img.shields.io/badge/Deployment-Vercel_Ready-000000?style=for-the-badge&logo=vercel&logoColor=white)](https://deutschflow.vercel.app)
 
-🌐 **Live Demo:** [https://deutschflow.vercel.app](https://deutsch-flow-beta.vercel.app/)  
+🌐 **Live Demo:** [https://deutsch-flow-beta.vercel.app/](https://deutsch-flow-beta.vercel.app/)  
 📦 **Source Code:** [https://github.com/FarhanHamim/DeutschFlow](https://github.com/FarhanHamim/DeutschFlow)
 
 ---
