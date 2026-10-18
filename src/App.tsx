@@ -17,6 +17,10 @@ import WeakWordsVault from './components/WeakWordsVault';
 import Settings from './components/Settings';
 import AddWordModal from './components/AddWordModal';
 import LearningJourney from './components/LearningJourney';
+import CompoundWordsLab from './components/CompoundWordsLab';
+import VerbKickerVisualizer from './components/VerbKickerVisualizer';
+import BossBattles from './components/BossBattles';
+import { sounds } from './utils/soundEffects';
 
 export type View =
   | 'dashboard'
@@ -26,6 +30,9 @@ export type View =
   | 'grammar'
   | 'dialogues'
   | 'weak-words'
+  | 'compound-words'
+  | 'verb-kicker'
+  | 'boss-battles'
   | 'settings';
 
 const pageVariants = {
@@ -45,6 +52,23 @@ export default function App() {
     preloadVoices();
     game.checkStreak();
     // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
+
+  // Sync audio mute state with Web Audio synthesizer sound effects
+  useEffect(() => {
+    sounds.setMuted(game.state.audioMuted);
+  }, [game.state.audioMuted]);
+
+  // Global tactile mechanical pop on .tactile-btn press
+  useEffect(() => {
+    const handleGlobalClick = (e: MouseEvent) => {
+      const target = e.target as HTMLElement | null;
+      if (target?.closest('.tactile-btn')) {
+        sounds.playClick();
+      }
+    };
+    document.addEventListener('click', handleGlobalClick);
+    return () => document.removeEventListener('click', handleGlobalClick);
   }, []);
 
   // Sync dark mode dynamically with HTML element and document body
@@ -76,6 +100,12 @@ export default function App() {
         return <Dialogues game={game} />;
       case 'weak-words':
         return <WeakWordsVault game={game} />;
+      case 'compound-words':
+        return <CompoundWordsLab game={game} />;
+      case 'verb-kicker':
+        return <VerbKickerVisualizer />;
+      case 'boss-battles':
+        return <BossBattles />;
       case 'settings':
         return <Settings game={game} onOpenAddWord={() => setShowAddWord(true)} />;
       default:

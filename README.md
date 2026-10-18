@@ -25,6 +25,13 @@ DeutschFlow is a personal web application for mastering the German language from
 - 🎮 **4 Quiz Arcade Game Modes:** Rapid-fire Gender drills, Sentence Builder (*Satzbau*), Story Quests (*Fill-in-the-Blank*), and Listening Challenges.
 - 🐻 **Bärli the Berlin Bear:** Interactive companion mascot providing context-sensitive grammar tips, Goethe milestones, and cultural trivia.
 - 🌓 **Midnight Dark & Warm Cream Light Modes:** Fully responsive, high-contrast dark theme with tactile borders and deep bevels.
+- ⚡ **6 Power-User Interactive Learning Modules (100% Free, Native Browser APIs):**
+  1. **Native Web Audio API Procedural Synthesizer (`/utils/soundEffects.ts`):** Crisp mechanical tactile pops (`150Hz -> 80Hz`), marimba card flip whooshes, ascending major triad victory arpeggios, and celebratory deck fanfares with a global navbar mute toggle.
+  2. **"Lego Compound Word" Splitter (`Komposita-Labor`):** Deconstruct mammoth German words into tactile puzzle blocks (e.g. *Handschuh* = *die Hand* ✋ + *der Schuh* 👟 = *der Handschuh* 🧤) with the **Last Word Rule 👑** highlighted!
+  3. **Live Pronunciation Coach ("Speak & Shadow" via Web Speech Recognition):** Native `de-DE` microphone listening with animated soundwave rings, word similarity calculations, and instant phonetic feedback.
+  4. **"Verb-Kicker" Sentence Structure Animator:** Interactive visual sandbox demonstrating German word order: V2 Verb Position 2 Anchor ⚓, Separable Prefix Scissors ✂️, and Subordinating Conjunction Boot 🥾 (*weil / dass / obwohl*).
+  5. **"Real-Life Germany" Interactive Boss Battles:** RPG dialogue messenger simulation with *Frau Becker* at the Sunday Bäckerei, *Murat the DHL Bote*, the *WG-Casting*, and the *Bürgeramt*, complete with patience bars and grammar explanations.
+  6. **"Commute Audio Loop" Mode:** Hands-free auto-study mode on flashcards that speaks English, counts down 3s, flips to German, speaks the sentence, and advances automatically!
 - 💾 **100% Offline-Capable & Privacy First:** Zero login required; all XP, streaks, weak words, and custom decks persist in `localStorage` with one-click JSON backup/restore.
 
 ---

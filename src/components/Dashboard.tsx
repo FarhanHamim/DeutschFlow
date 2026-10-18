@@ -19,6 +19,9 @@ import {
   CheckCircle,
   Trophy,
   Compass,
+  Puzzle,
+  Anchor,
+  Swords,
 } from 'lucide-react';
 import { vocabularyData, grammarTopics, dialogueScenarios } from '../data/germanCurriculum';
 import { getMasteryLevel } from '../utils/sm2';
@@ -327,6 +330,106 @@ export default function Dashboard({ game, onNavigate }: Props) {
             </div>
             <div className="mt-4 pt-3 border-t-2 border-[#18181B]/10 dark:border-white/10 flex items-center justify-between text-xs font-['Fredoka'] font-black text-rose-600 dark:text-rose-400">
               <span>Listen to Dialogues</span>
+              <ArrowRight size={14} className="group-hover:translate-x-1 transition-transform" />
+            </div>
+          </div>
+        </div>
+      </div>
+
+      {/* ============================================================ */}
+      {/* POWER-USER INTERACTIVE LABS (Zero External API Free Tools)   */}
+      {/* ============================================================ */}
+      <div className="space-y-4">
+        <div className="flex items-center justify-between">
+          <div className="flex items-center gap-2">
+            <h2 className="font-['Fraunces'] text-2xl font-black text-[#18181B] dark:text-white">
+              Power-User Interactive Labs
+            </h2>
+            <span className="text-xl animate-pulse">⚡</span>
+          </div>
+          <span className="text-xs font-['Fredoka'] font-black uppercase tracking-wider text-amber-600 dark:text-amber-400 bg-amber-500/10 px-3 py-1 rounded-full border border-amber-500/20">
+            Native Browser Engine
+          </span>
+        </div>
+
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-5">
+          {/* Lab 1: Lego Compound Word Splitter */}
+          <div
+            onClick={() => onNavigate('compound-words')}
+            className="tactile-card p-5 bg-gradient-to-br from-indigo-50 to-blue-100 dark:from-[#13192B] dark:to-[#18233C] cursor-pointer flex flex-col justify-between group"
+          >
+            <div>
+              <div className="flex items-center justify-between mb-3">
+                <span className="text-3xl p-2 rounded-2xl bg-indigo-600 text-white border-2 border-[#18181B] shadow-[0px_3px_0px_#18181B] group-hover:rotate-6 transition-transform">
+                  🧩
+                </span>
+                <span className="vinyl-sticker px-2.5 py-0.5 bg-indigo-600 text-white text-[10px] rotate-[-2deg]">
+                  LEGO LAB
+                </span>
+              </div>
+              <h3 className="font-['Fraunces'] text-xl font-black text-[#18181B] dark:text-white">
+                Compound Word Splitter
+              </h3>
+              <p className="font-['Plus_Jakarta_Sans'] text-xs opacity-75 font-semibold mt-1 text-[#18181B] dark:text-slate-300">
+                Break mammoth German words into tactile puzzle pieces and discover the Last Word Rule 👑!
+              </p>
+            </div>
+            <div className="mt-4 pt-3 border-t-2 border-[#18181B]/10 dark:border-white/10 flex items-center justify-between text-xs font-['Fredoka'] font-black text-indigo-600 dark:text-indigo-400">
+              <span>Open Komposita-Labor</span>
+              <ArrowRight size={14} className="group-hover:translate-x-1 transition-transform" />
+            </div>
+          </div>
+
+          {/* Lab 2: The Verb-Kicker Sentence Animator */}
+          <div
+            onClick={() => onNavigate('verb-kicker')}
+            className="tactile-card p-5 bg-gradient-to-br from-amber-50 to-orange-100 dark:from-[#2B1B15] dark:to-[#382317] cursor-pointer flex flex-col justify-between group"
+          >
+            <div>
+              <div className="flex items-center justify-between mb-3">
+                <span className="text-3xl p-2 rounded-2xl bg-amber-500 text-slate-900 border-2 border-[#18181B] shadow-[0px_3px_0px_#18181B] group-hover:-rotate-6 transition-transform">
+                  ⚓
+                </span>
+                <span className="vinyl-sticker px-2.5 py-0.5 bg-amber-500 text-slate-900 text-[10px] rotate-[1deg]">
+                  V2 & NEBENSATZ
+                </span>
+              </div>
+              <h3 className="font-['Fraunces'] text-xl font-black text-[#18181B] dark:text-white">
+                The Verb-Kicker 🥾
+              </h3>
+              <p className="font-['Plus_Jakarta_Sans'] text-xs opacity-75 font-semibold mt-1 text-[#18181B] dark:text-slate-300">
+                Visualize German sentence word order: V2 anchor ⚓, separable verb scissors ✂️, and subordinate kicker 🥾!
+              </p>
+            </div>
+            <div className="mt-4 pt-3 border-t-2 border-[#18181B]/10 dark:border-white/10 flex items-center justify-between text-xs font-['Fredoka'] font-black text-amber-600 dark:text-amber-400">
+              <span>Launch Sentence Sandbox</span>
+              <ArrowRight size={14} className="group-hover:translate-x-1 transition-transform" />
+            </div>
+          </div>
+
+          {/* Lab 3: Real-Life Germany Boss Battles */}
+          <div
+            onClick={() => onNavigate('boss-battles')}
+            className="tactile-card p-5 bg-gradient-to-br from-rose-50 to-red-100 dark:from-[#2B1218] dark:to-[#3B151F] cursor-pointer flex flex-col justify-between group"
+          >
+            <div>
+              <div className="flex items-center justify-between mb-3">
+                <span className="text-3xl p-2 rounded-2xl bg-rose-600 text-white border-2 border-[#18181B] shadow-[0px_3px_0px_#18181B] group-hover:rotate-6 transition-transform">
+                  ⚔️
+                </span>
+                <span className="vinyl-sticker px-2.5 py-0.5 bg-rose-600 text-white text-[10px] rotate-[-2deg]">
+                  RPG COMIC
+                </span>
+              </div>
+              <h3 className="font-['Fraunces'] text-xl font-black text-[#18181B] dark:text-white">
+                Real-Life Boss Battles
+              </h3>
+              <p className="font-['Plus_Jakarta_Sans'] text-xs opacity-75 font-semibold mt-1 text-[#18181B] dark:text-slate-300">
+                Survive the Sunday Bäckerei, Murat the Paketbote, the WG-Casting, and the Bürgeramt with instant grammar tips!
+              </p>
+            </div>
+            <div className="mt-4 pt-3 border-t-2 border-[#18181B]/10 dark:border-white/10 flex items-center justify-between text-xs font-['Fredoka'] font-black text-rose-600 dark:text-rose-400">
+              <span>Enter RPG Battles</span>
               <ArrowRight size={14} className="group-hover:translate-x-1 transition-transform" />
             </div>
           </div>

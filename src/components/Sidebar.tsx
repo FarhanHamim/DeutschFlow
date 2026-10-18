@@ -13,6 +13,9 @@ import {
   Settings as SettingsIcon,
   X,
   ChevronRight,
+  Puzzle,
+  Anchor,
+  Swords,
 } from 'lucide-react';
 import type { View } from '../App';
 
@@ -54,6 +57,9 @@ export default function Sidebar({
     { id: 'journey', label: 'Learning Journey', mobileLabel: 'Guide', emoji: '🗺️', icon: Compass, isPrimaryMobile: true },
     { id: 'flashcards', label: 'Flashcards', mobileLabel: 'Cards', emoji: '🃏', icon: Layers, isPrimaryMobile: true },
     { id: 'quiz', label: 'Quiz Arcade', mobileLabel: 'Arcade', emoji: '🎮', icon: Gamepad2, isPrimaryMobile: true },
+    { id: 'compound-words', label: 'Compound Words', mobileLabel: 'Komposita', emoji: '🧩', icon: Puzzle, isPrimaryMobile: false },
+    { id: 'verb-kicker', label: 'Verb-Kicker 🥾', mobileLabel: 'V2 Kicker', emoji: '⚓', icon: Anchor, isPrimaryMobile: false },
+    { id: 'boss-battles', label: 'Boss Battles ⚔️', mobileLabel: 'Battles', emoji: '⚔️', icon: Swords, isPrimaryMobile: false },
     { id: 'grammar', label: 'Grammar Sheets', mobileLabel: 'Grammar', emoji: '📚', icon: BookOpen, isPrimaryMobile: false },
     { id: 'dialogues', label: 'Roleplay Stories', mobileLabel: 'Stories', emoji: '💬', icon: MessageSquare, isPrimaryMobile: false },
     { id: 'weak-words', label: 'Weak Words Vault', mobileLabel: 'Vault', emoji: '🔥', icon: Flame, badge: weakWordsCount, isPrimaryMobile: false },

@@ -4,9 +4,11 @@
 
 import { useState, useMemo } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { Volume2, ArrowLeft, Play, Sparkles, MessageCircle, RotateCcw } from 'lucide-react';
+import { Volume2, ArrowLeft, Play, Sparkles, MessageCircle, RotateCcw, Mic } from 'lucide-react';
 import { dialogueScenarios } from '../data/germanCurriculum';
 import { speakGerman } from '../utils/audio';
+import { sounds } from '../utils/soundEffects';
+import PronunciationCoach from './PronunciationCoach';
 
 type Props = {
   game: ReturnType<typeof import('../hooks/useGameState').useGameState>;
@@ -16,6 +18,7 @@ export default function Dialogues({ game }: Props) {
   const { state, addXP } = game;
   const [activeScenario, setActiveScenario] = useState<string | null>(null);
   const [revealedLines, setRevealedLines] = useState(0);
+  const [practicingLine, setPracticingLine] = useState<number | null>(null);
 
   const scenarios = useMemo(
     () => dialogueScenarios.filter((d) => d.level === state.currentLevel),
@@ -130,17 +133,35 @@ export default function Dialogues({ game }: Props) {
                       <span className={`text-[11px] font-black ${isEven ? 'text-orange-500' : 'text-amber-100'}`}>
                         {line.speaker}
                       </span>
-                      <button
-                        onClick={() => speakGerman(line.german, 0.95, state.audioMuted)}
-                        className={`p-1 rounded-full ${
-                          isEven
-                            ? 'hover:bg-slate-100 dark:hover:bg-slate-700 text-orange-500'
-                            : 'hover:bg-white/20 text-white'
-                        }`}
-                        title="Hear line"
-                      >
-                        <Volume2 size={15} />
-                      </button>
+                      <div className="flex items-center gap-1.5">
+                        <button
+                          onClick={() => {
+                            sounds.playClick();
+                            setPracticingLine(practicingLine === i ? null : i);
+                          }}
+                          className={`p-1 rounded-full transition-colors ${
+                            practicingLine === i
+                              ? 'bg-amber-400 text-slate-900 font-bold'
+                              : isEven
+                              ? 'hover:bg-slate-100 dark:hover:bg-slate-700 text-amber-500'
+                              : 'hover:bg-white/20 text-white'
+                          }`}
+                          title="Speak & Shadow Pronunciation"
+                        >
+                          <Mic size={14} />
+                        </button>
+                        <button
+                          onClick={() => speakGerman(line.german, 0.95, state.audioMuted)}
+                          className={`p-1 rounded-full ${
+                            isEven
+                              ? 'hover:bg-slate-100 dark:hover:bg-slate-700 text-orange-500'
+                              : 'hover:bg-white/20 text-white'
+                          }`}
+                          title="Hear line"
+                        >
+                          <Volume2 size={15} />
+                        </button>
+                      </div>
                     </div>
 
                     <p className="font-[Outfit] text-sm sm:text-base font-bold leading-snug">
@@ -153,6 +174,18 @@ export default function Dialogues({ game }: Props) {
                     >
                       "{line.english}"
                     </p>
+
+                    {/* Inline Pronunciation Coach when active */}
+                    {practicingLine === i && (
+                      <div className="mt-3 pt-3 border-t border-black/10 dark:border-white/10 text-slate-900 dark:text-slate-100">
+                        <PronunciationCoach
+                          targetText={line.german}
+                          englishMeaning={line.english}
+                          compact={true}
+                          onMastered={() => addXP(10)}
+                        />
+                      </div>
+                    )}
                   </div>
                 </motion.div>
               );
