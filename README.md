@@ -2,6 +2,15 @@
 
 > **Master German from A1 to B1 with tactile Neo-Brutalist joy, synesthetic gender colors, and 1,000 Goethe & Telc aligned words.**
 
+[![Live Demo](https://img.shields.io/badge/Live_Demo-deutschflow.vercel.app-FF5500?style=for-the-badge&logo=vercel&logoColor=white)](https://deutschflow.vercel.app)
+[![GitHub Repo](https://img.shields.io/badge/GitHub-DeutschFlow-18181B?style=for-the-badge&logo=github&logoColor=white)](https://github.com/FarhanHamim/DeutschFlow)
+[![Vercel Deployment](https://img.shields.io/badge/Deployment-Vercel_Ready-000000?style=for-the-badge&logo=vercel&logoColor=white)](https://deutschflow.vercel.app)
+
+🌐 **Live Demo:** [https://deutschflow.vercel.app](https://deutschflow.vercel.app)  
+📦 **Source Code:** [https://github.com/FarhanHamim/DeutschFlow](https://github.com/FarhanHamim/DeutschFlow)
+
+---
+
 DeutschFlow is a personal web application for mastering the German language from levels **A1 (Beginner)**, **A2 (Elementary)**, to **B1 (Intermediate)**. Built specifically for English speakers learning German, all navigation, instructions, and controls are presented in clear English while the learning material is German.
 
 ---
