@@ -1,0 +1,309 @@
+@import "tailwindcss";
+
+@custom-variant dark (&:where([data-theme=dark], [data-theme=dark] *, .dark, .dark *));
+
+@theme {
+  --font-display: 'Fraunces', serif;
+  --font-arcade: 'Fredoka', cursive, sans-serif;
+  --font-sans: 'Plus Jakarta Sans', sans-serif;
+  --font-mono: 'Space Mono', 'JetBrains Mono', monospace;
+
+  /* Tactile Alpine Canvas Colors */
+  --color-paper-light: #FAF6F0;
+  --color-paper-dot: #D6CFC2;
+  --color-slate-dark: #12131A;
+  --color-slate-card: #1E202B;
+
+  /* Ink */
+  --color-espresso-ink: #18181B;
+
+  /* Synesthetic German Gender Colors */
+  --color-der-blue: #2563EB;
+  --color-die-rose: #E11D48;
+  --color-das-emerald: #059669;
+  --color-verb-amber: #D97706;
+}
+
+/* Base resets & typography */
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  -webkit-tap-highlight-color: transparent;
+}
+
+body {
+  font-family: var(--font-sans);
+  background-color: var(--color-paper-light);
+  background-image: radial-gradient(#D6CFC2 1.25px, transparent 1.25px);
+  background-size: 24px 24px;
+  color: #18181B;
+  overflow-x: hidden;
+  transition: background-color 0.25s ease, color 0.25s ease;
+}
+
+body.dark, html.dark body {
+  background-color: #12131A;
+  background-image: radial-gradient(#252836 1.25px, transparent 1.25px);
+  background-size: 24px 24px;
+  color: #F4F4F6;
+}
+
+/* Tactile Neo-Brutalist Mechanical Physics */
+.tactile-card {
+  border: 2.5px solid #18181B;
+  border-radius: 24px;
+  box-shadow: 0px 6px 0px #18181B;
+  transition: transform 0.18s cubic-bezier(0.34, 1.56, 0.64, 1), box-shadow 0.18s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+.dark .tactile-card,
+body.dark .tactile-card {
+  border: 2.5px solid #32374B;
+  box-shadow: 0px 6px 0px #090A0F;
+}
+
+.tactile-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0px 8px 0px #18181B;
+}
+
+.dark .tactile-card:hover,
+body.dark .tactile-card:hover {
+  box-shadow: 0px 8px 0px #090A0F;
+}
+
+/* Mechanical 3D Keycap Buttons */
+.tactile-btn {
+  position: relative;
+  border: 2.5px solid #18181B;
+  border-radius: 16px;
+  box-shadow: 0px 5px 0px #18181B;
+  font-family: var(--font-arcade);
+  font-weight: 700;
+  user-select: none;
+  cursor: pointer;
+  transition: transform 0.1s cubic-bezier(0.34, 1.56, 0.64, 1), box-shadow 0.1s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+.dark .tactile-btn,
+body.dark .tactile-btn {
+  border-color: #32374B;
+  box-shadow: 0px 5px 0px #090A0F;
+}
+
+.tactile-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0px 7px 0px #18181B;
+}
+
+.dark .tactile-btn:hover,
+body.dark .tactile-btn:hover {
+  box-shadow: 0px 7px 0px #090A0F;
+}
+
+.tactile-btn:active {
+  transform: translateY(4px);
+  box-shadow: 0px 1px 0px #18181B;
+}
+
+.dark .tactile-btn:active,
+body.dark .tactile-btn:active {
+  box-shadow: 0px 1px 0px #090A0F;
+}
+
+/* Specific Tactile Button Colorways */
+.tactile-btn-primary {
+  background-color: #FF5500;
+  color: #FFFFFF;
+}
+
+.tactile-btn-blue {
+  background-color: #2563EB;
+  color: #FFFFFF;
+}
+
+.tactile-btn-rose {
+  background-color: #E11D48;
+  color: #FFFFFF;
+}
+
+.tactile-btn-emerald {
+  background-color: #059669;
+  color: #FFFFFF;
+}
+
+.tactile-btn-amber {
+  background-color: #D97706;
+  color: #FFFFFF;
+}
+
+.tactile-btn-neutral {
+  background-color: #FFFFFF;
+  color: #18181B;
+}
+
+.dark .tactile-btn-neutral,
+body.dark .tactile-btn-neutral {
+  background-color: #1F2332;
+  color: #F4F4F6;
+  border-color: #383E58;
+  box-shadow: 0px 5px 0px #090A0F;
+}
+
+/* Synesthetic German Gender Color Aura Cards */
+.gender-aura-der {
+  background: linear-gradient(135deg, #EFF6FF 0%, #E0F2FE 50%, #EEF2FF 100%);
+  border: 2.5px solid #18181B;
+  box-shadow: 0px 6px 0px #2563EB;
+}
+.dark .gender-aura-der,
+body.dark .gender-aura-der {
+  background: linear-gradient(135deg, #101B33 0%, #172554 50%, #1E1B4B 100%);
+  border: 2.5px solid #3B82F6;
+  box-shadow: 0px 6px 0px #1D4ED8;
+}
+
+.gender-aura-die {
+  background: linear-gradient(135deg, #FFF1F2 0%, #FDF2F8 50%, #FFEDD5 100%);
+  border: 2.5px solid #18181B;
+  box-shadow: 0px 6px 0px #E11D48;
+}
+.dark .gender-aura-die,
+body.dark .gender-aura-die {
+  background: linear-gradient(135deg, #2D1119 0%, #4C0519 50%, #3B0715 100%);
+  border: 2.5px solid #F43F5E;
+  box-shadow: 0px 6px 0px #BE123C;
+}
+
+.gender-aura-das {
+  background: linear-gradient(135deg, #ECFDF5 0%, #F0FDFA 50%, #F7FEE7 100%);
+  border: 2.5px solid #18181B;
+  box-shadow: 0px 6px 0px #059669;
+}
+.dark .gender-aura-das,
+body.dark .gender-aura-das {
+  background: linear-gradient(135deg, #09281E 0%, #064E3B 50%, #064E3B 100%);
+  border: 2.5px solid #10B981;
+  box-shadow: 0px 6px 0px #047857;
+}
+
+.gender-aura-verb {
+  background: linear-gradient(135deg, #FFFBEB 0%, #FEF3C7 50%, #FFEDD5 100%);
+  border: 2.5px solid #18181B;
+  box-shadow: 0px 6px 0px #D97706;
+}
+.dark .gender-aura-verb,
+body.dark .gender-aura-verb {
+  background: linear-gradient(135deg, #301E0A 0%, #451A03 50%, #381503 100%);
+  border: 2.5px solid #F59E0B;
+  box-shadow: 0px 6px 0px #B45309;
+}
+
+/* Vinyl Die-Cut Sticker Badges */
+.vinyl-sticker {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 9999px;
+  border: 2.5px solid #18181B;
+  font-family: var(--font-arcade);
+  font-weight: 800;
+  box-shadow: 0px 3px 0px #18181B;
+  user-select: none;
+}
+
+.dark .vinyl-sticker,
+body.dark .vinyl-sticker {
+  border-color: #383E58;
+  box-shadow: 0px 3px 0px #090A0F;
+}
+
+/* 3D Trading Card Flip */
+.flip-card {
+  perspective: 1200px;
+}
+
+.flip-card-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  transition: transform 0.6s cubic-bezier(0.34, 1.56, 0.64, 1);
+  transform-style: preserve-3d;
+}
+
+.flip-card-inner.flipped {
+  transform: rotateY(180deg);
+}
+
+.flip-card-front,
+.flip-card-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+}
+
+.flip-card-back {
+  transform: rotateY(180deg);
+}
+
+/* Liquid Candy-Cane Barber-Pole Progress Shader */
+@keyframes candy-cane {
+  0% { background-position: 0 0; }
+  100% { background-position: 40px 0; }
+}
+
+.progress-candy-cane {
+  background-image: repeating-linear-gradient(
+    45deg,
+    rgba(255, 255, 255, 0.28) 0,
+    rgba(255, 255, 255, 0.28) 12px,
+    transparent 12px,
+    transparent 24px
+  );
+  background-size: 40px 40px;
+  animation: candy-cane 1.4s linear infinite;
+}
+
+/* Floating Animation */
+@keyframes float {
+  0%, 100% { transform: translateY(0px) rotate(0deg); }
+  50% { transform: translateY(-8px) rotate(1deg); }
+}
+
+.animate-float {
+  animation: float 3.5s ease-in-out infinite;
+}
+
+/* Wrong Answer Shake */
+@keyframes shake {
+  0%, 100% { transform: translateX(0); }
+  20%, 60% { transform: translateX(-8px); }
+  40%, 80% { transform: translateX(8px); }
+}
+
+.animate-shake {
+  animation: shake 0.4s cubic-bezier(0.36, 0.07, 0.19, 0.97) both;
+}
+
+/* Custom Clean Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+::-webkit-scrollbar-thumb {
+  background: #C4BCAF;
+  border-radius: 999px;
+  border: 2px solid transparent;
+}
+.dark ::-webkit-scrollbar-thumb,
+body.dark ::-webkit-scrollbar-thumb {
+  background: #3B3F54;
+}
